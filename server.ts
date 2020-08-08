@@ -199,23 +199,30 @@ const server = createServer((s) => {
                 throw new Error('Wrong cmd')
         }
     }
+    let last = Date.now()
+    const getT = () => Math.random() * 500 + 250
     rl.on('line', (input) => {
         try {
+            const now = Date.now()
+            if (now - last < getT()) {
+                throw new Error('hit rate limit, slow down')
+            }
+            last = Date.now()
             const [cmd, token, ...ps] = input.split(' ')
             if (cmd === 'AUTH') {
-                s.write('{"status":"OK"}\n')
+                s.write('{"status": "OK"}\n')
                 return
             }
             let info = handler(cmd, token, ps)
             s.write(JSON.stringify({
                 status: 'OK',
                 info,
-            }) + '\n')
+            }).replace(/":"/g, '": "') + '\n')
         } catch(e) {
             s.write(JSON.stringify({
                 status: 'ERROR',
                 error_msg: e.message.toString(),
-            }) + '\n')
+            }).replace(/":"/g, '": "') + '\n')
         }
     })
     s.write('HI\n')
