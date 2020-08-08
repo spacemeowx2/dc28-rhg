@@ -153,7 +153,9 @@ const server = createServer((s) => {
                 }
                 player.items.push(existing.id)
 
-                return
+                return {
+                    item: existing
+                }
             }
             case Cmds.Attack:
                 return
