@@ -1,3 +1,5 @@
+const STATE = './1596846885.json'
+
 import { createServer } from 'net'
 import { createInterface } from 'readline'
 import { readFileSync } from 'fs'
@@ -46,7 +48,7 @@ type Item = {
     items: number[]
 }
 type State = Record<string, Item>
-const state: State = JSON.parse(readFileSync('./1596846885.json').toString())
+let state: State = JSON.parse(readFileSync(STATE).toString())
 
 const find = (loc: Location) => {
     return Object.values(state).find(i => i?.loc?.[0] === loc[0] && i?.loc?.[1] === loc[1])
@@ -172,7 +174,7 @@ const server = createServer((s) => {
         try {
             const [cmd, token, ...ps] = input.split(' ')
             if (cmd === 'AUTH') {
-                s.write('OK\n')
+                s.write('{"status":"OK"}\n')
                 return
             }
             let info = handler(cmd, token, ps)
@@ -198,6 +200,10 @@ const app = express()
 const port = 8080
 
 app.get('/', (req, res) => res.sendFile(__dirname + '/home.html'))
+app.get('/reset', (req, res) => {
+    state = JSON.parse(readFileSync(STATE).toString())
+    res.send('Ok')
+})
 app.get('/state.json', (req, res) => {
     res.json({
         meta: {
