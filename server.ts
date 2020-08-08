@@ -44,33 +44,35 @@ type Item = {
     items: number[]
 }
 type State = Record<string, Item>
-const state: State = JSON.parse(readFileSync('../jsons/1596846885.json').toString())
+// const state: State = JSON.parse(readFileSync('../jsons/1596846885.json').toString())
 
-const find = (loc: Location) => {
-    return Object.values(state).find(i => i?.loc?.[0] === loc[0] && i?.loc?.[1] === loc[1])
-}
-
-const locRelative = (loc: Location, d: number) => {
-    const dir = LocMap[d]
-    if (!dir) {
-        throw new Error('Wrong args')
-    }
-    const [dy, dx] = dir
-    const newPos: Location = [loc[0] + dy, loc[1] + dx]
-    return newPos
-}
-
-// team: P1
-const getPlayer = (team: string) => {
-    const n =  state[team]
-    if (n.type !== 'player') {
-        throw new Error('Assert error player')
-    }
-    return n
-}
 const R = 5
 
 const server = createServer((s) => {
+    const state: State = JSON.parse(readFileSync('../jsons/1596846885.json').toString())
+    const find = (loc: Location) => {
+        return Object.values(state).find(i => i?.loc?.[0] === loc[0] && i?.loc?.[1] === loc[1])
+    }
+    
+    const locRelative = (loc: Location, d: number) => {
+        const dir = LocMap[d]
+        if (!dir) {
+            throw new Error('Wrong args')
+        }
+        const [dy, dx] = dir
+        const newPos: Location = [loc[0] + dy, loc[1] + dx]
+        return newPos
+    }
+    
+    // team: P1
+    const getPlayer = (team: string) => {
+        const n =  state[team]
+        if (n.type !== 'player') {
+            throw new Error('Assert error player')
+        }
+        return n
+    }
+
     const rl = createInterface({
         input: s,
         // output: s,
@@ -79,7 +81,18 @@ const server = createServer((s) => {
         const ncmd = parseInt(cmd)
         const team = `P${parseInt(token[0])}`
         const nps = ps.map(i => parseInt(i, 10))
+        console.log('cmd', Cmds[ncmd], team)
         switch(ncmd) {
+            case Cmds.Inspect: {
+                const itemId = nps[0]
+                const player = getPlayer(team)
+                const item = player.items.some(i => i === itemId)
+                if (!item) {
+                    throw new Error('you cannot inspect an item you do not own')
+                }
+
+                return item
+            }
             case Cmds.Elems: {
                 const player = getPlayer(team)
                 if (!player.loc) {
@@ -146,6 +159,7 @@ const server = createServer((s) => {
             }
             default:
                 console.log('unknown cmd', Cmds[ncmd], token, nps)
+                throw new Error('Wrong cmd')
         }
     }
     rl.on('line', (input) => {
@@ -159,17 +173,17 @@ const server = createServer((s) => {
             s.write(JSON.stringify({
                 status: 'OK',
                 info,
-            }))
+            }) + '\n')
         } catch(e) {
             s.write(JSON.stringify({
                 status: 'ERROR',
                 error_msg: e.message.toString(),
-            }))
+            }) + '\n')
         }
     })
     s.write('HI\n')
 
 })
 
-server.listen(6666)
+server.listen(6666, '0.0.0.0')
 console.log('listening on 127.0.0.1:6666')
