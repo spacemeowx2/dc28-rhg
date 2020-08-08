@@ -50,6 +50,19 @@ type Item = {
 }
 type State = Record<string, Item>
 let state: State = JSON.parse(readFileSync(STATE).toString())
+let snapshot: {
+    ts: number
+    state: State
+} = {
+    ts: Date.now(),
+    state,
+}
+setInterval(() => {
+    snapshot = {
+        ts: Date.now(),
+        state: JSON.parse(JSON.stringify(state)),
+    }
+}, 10 * 1000)
 const W = 30
 const H = 30
 
@@ -278,7 +291,7 @@ const server = createServer((s) => {
             s.write(JSON.stringify({
                 status: 'OK',
                 info,
-            }).replace(/":"/g, '": "') + '\n')
+            }).replace(/":"/g, '": "') + '\n') // why the f**king python place a space after `:`
         } catch(e) {
             s.write(JSON.stringify({
                 status: 'ERROR',
@@ -308,9 +321,9 @@ app.get('/reset', (req, res) => {
 app.get('/state.json', (req, res) => {
     res.json({
         meta: {
-            timestamp: new Date()
+            timestamp: new Date(snapshot.ts)
         },
-        elems: state
+        elems: snapshot.state
     })
 })
 
