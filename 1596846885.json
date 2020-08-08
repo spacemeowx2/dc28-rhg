@@ -1,0 +1,1686 @@
+{
+  "I108": {
+    "loc": null, 
+    "name": "Flag-8", 
+    "short_name": "F", 
+    "value": 300, 
+    "item_type": "FLAG", 
+    "type": "item", 
+    "id": 108, 
+    "desc": "???"
+  }, 
+  "I109": {
+    "loc": null, 
+    "name": "Flag-9", 
+    "short_name": "F", 
+    "value": 300, 
+    "item_type": "FLAG", 
+    "type": "item", 
+    "id": 109, 
+    "desc": "???"
+  }, 
+  "I59": {
+    "loc": [
+      14, 
+      10
+    ], 
+    "name": "spyware", 
+    "short_name": "SPY", 
+    "value": 20, 
+    "item_type": "SPYWARE", 
+    "type": "item", 
+    "id": 59, 
+    "desc": "useful to mount spyware attacks"
+  }, 
+  "P11": {
+    "loc": [
+      7, 
+      14
+    ], 
+    "locked": false, 
+    "name": "r3kapig", 
+    "money": 100, 
+    "items": [
+      111
+    ], 
+    "type": "player", 
+    "id": 11
+  }, 
+  "I102": {
+    "loc": null, 
+    "name": "Flag-2", 
+    "short_name": "F", 
+    "value": 300, 
+    "item_type": "FLAG", 
+    "type": "item", 
+    "id": 102, 
+    "desc": "???"
+  }, 
+  "I103": {
+    "loc": null, 
+    "name": "Flag-3", 
+    "short_name": "F", 
+    "value": 300, 
+    "item_type": "FLAG", 
+    "type": "item", 
+    "id": 103, 
+    "desc": "???"
+  }, 
+  "I77": {
+    "loc": [
+      16, 
+      21
+    ], 
+    "name": "ooosticker", 
+    "short_name": "OOO", 
+    "value": 5, 
+    "item_type": "OOOSTICKER", 
+    "type": "item", 
+    "id": 77, 
+    "desc": "the bestest sticker"
+  }, 
+  "I76": {
+    "loc": [
+      28, 
+      23
+    ], 
+    "name": "u2f key", 
+    "short_name": "U2F", 
+    "value": 20, 
+    "item_type": "U2F_KEY", 
+    "type": "item", 
+    "id": 76, 
+    "desc": "useful to protect from phishing attacks"
+  }, 
+  "I75": {
+    "loc": [
+      26, 
+      28
+    ], 
+    "name": "zeroday", 
+    "short_name": "0", 
+    "value": 40, 
+    "item_type": "ZERODAY", 
+    "type": "item", 
+    "id": 75, 
+    "desc": "useful to attack even when player has software updates"
+  }, 
+  "I74": {
+    "loc": [
+      12, 
+      17
+    ], 
+    "name": "u2f key", 
+    "short_name": "U2F", 
+    "value": 20, 
+    "item_type": "U2F_KEY", 
+    "type": "item", 
+    "id": 74, 
+    "desc": "useful to protect from phishing attacks"
+  }, 
+  "I73": {
+    "loc": [
+      12, 
+      3
+    ], 
+    "name": "u2f key", 
+    "short_name": "U2F", 
+    "value": 20, 
+    "item_type": "U2F_KEY", 
+    "type": "item", 
+    "id": 73, 
+    "desc": "useful to protect from phishing attacks"
+  }, 
+  "I72": {
+    "loc": [
+      11, 
+      10
+    ], 
+    "name": "wireless card", 
+    "short_name": "WC", 
+    "value": 50, 
+    "item_type": "WIRELESS_CARD", 
+    "type": "item", 
+    "id": 72, 
+    "desc": "useful to mount wifi attacks"
+  }, 
+  "I71": {
+    "loc": [
+      17, 
+      16
+    ], 
+    "name": "iron case", 
+    "short_name": "IC", 
+    "value": 20, 
+    "item_type": "IRON_CASE", 
+    "type": "item", 
+    "id": 71, 
+    "desc": "useful to protect from usb attacks"
+  }, 
+  "I70": {
+    "loc": [
+      0, 
+      14
+    ], 
+    "name": "pistachio", 
+    "short_name": "P", 
+    "value": 5, 
+    "item_type": "PISTACHIO", 
+    "type": "item", 
+    "id": 70, 
+    "desc": "the bestest food"
+  }, 
+  "I79": {
+    "loc": [
+      18, 
+      29
+    ], 
+    "name": "wireless card", 
+    "short_name": "WC", 
+    "value": 50, 
+    "item_type": "WIRELESS_CARD", 
+    "type": "item", 
+    "id": 79, 
+    "desc": "useful to mount wifi attacks"
+  }, 
+  "I78": {
+    "loc": [
+      0, 
+      8
+    ], 
+    "name": "nextgen av", 
+    "short_name": "AV", 
+    "value": 20, 
+    "item_type": "NEXTGEN_AV", 
+    "type": "item", 
+    "id": 78, 
+    "desc": "useful to protect from malware attacks"
+  }, 
+  "I113": {
+    "loc": null, 
+    "name": "Flag-13", 
+    "short_name": "F", 
+    "value": 300, 
+    "item_type": "FLAG", 
+    "type": "item", 
+    "id": 113, 
+    "desc": "???"
+  }, 
+  "I54": {
+    "loc": [
+      22, 
+      18
+    ], 
+    "name": "water", 
+    "short_name": "W", 
+    "value": 0, 
+    "item_type": "WATER", 
+    "type": "item", 
+    "id": 54, 
+    "desc": "WARNING, dangerous to computers!"
+  }, 
+  "I64": {
+    "loc": [
+      6, 
+      25
+    ], 
+    "name": "usb key", 
+    "short_name": "UK", 
+    "value": 20, 
+    "item_type": "USB_KEY", 
+    "type": "item", 
+    "id": 64, 
+    "desc": "useful to mount usb attacks"
+  }, 
+  "I65": {
+    "loc": [
+      13, 
+      1
+    ], 
+    "name": "wireless card", 
+    "short_name": "WC", 
+    "value": 50, 
+    "item_type": "WIRELESS_CARD", 
+    "type": "item", 
+    "id": 65, 
+    "desc": "useful to mount wifi attacks"
+  }, 
+  "I66": {
+    "loc": [
+      18, 
+      27
+    ], 
+    "name": "u2f key", 
+    "short_name": "U2F", 
+    "value": 20, 
+    "item_type": "U2F_KEY", 
+    "type": "item", 
+    "id": 66, 
+    "desc": "useful to protect from phishing attacks"
+  }, 
+  "I67": {
+    "loc": [
+      27, 
+      13
+    ], 
+    "name": "iron case", 
+    "short_name": "IC", 
+    "value": 20, 
+    "item_type": "IRON_CASE", 
+    "type": "item", 
+    "id": 67, 
+    "desc": "useful to protect from usb attacks"
+  }, 
+  "I60": {
+    "loc": [
+      21, 
+      17
+    ], 
+    "name": "pistachio", 
+    "short_name": "P", 
+    "value": 5, 
+    "item_type": "PISTACHIO", 
+    "type": "item", 
+    "id": 60, 
+    "desc": "the bestest food"
+  }, 
+  "I61": {
+    "loc": [
+      21, 
+      18
+    ], 
+    "name": "spyware", 
+    "short_name": "SPY", 
+    "value": 20, 
+    "item_type": "SPYWARE", 
+    "type": "item", 
+    "id": 61, 
+    "desc": "useful to mount spyware attacks"
+  }, 
+  "I62": {
+    "loc": [
+      23, 
+      20
+    ], 
+    "name": "wireless card", 
+    "short_name": "WC", 
+    "value": 50, 
+    "item_type": "WIRELESS_CARD", 
+    "type": "item", 
+    "id": 62, 
+    "desc": "useful to mount wifi attacks"
+  }, 
+  "I63": {
+    "loc": [
+      24, 
+      25
+    ], 
+    "name": "nday", 
+    "short_name": "N", 
+    "value": 10, 
+    "item_type": "NDAY", 
+    "type": "item", 
+    "id": 63, 
+    "desc": "useful to use some of the attacks requiring bugs"
+  }, 
+  "I68": {
+    "loc": [
+      26, 
+      27
+    ], 
+    "name": "water", 
+    "short_name": "W", 
+    "value": 0, 
+    "item_type": "WATER", 
+    "type": "item", 
+    "id": 68, 
+    "desc": "WARNING, dangerous to computers!"
+  }, 
+  "I69": {
+    "loc": [
+      9, 
+      1
+    ], 
+    "name": "phishing kit", 
+    "short_name": "PK", 
+    "value": 20, 
+    "item_type": "PHISHING_KIT", 
+    "type": "item", 
+    "id": 69, 
+    "desc": "useful to mount phishing attacks"
+  }, 
+  "P1": {
+    "loc": [
+      16, 
+      3
+    ], 
+    "locked": false, 
+    "name": "A*0*E", 
+    "money": 100, 
+    "items": [
+      101
+    ], 
+    "type": "player", 
+    "id": 1
+  }, 
+  "I114": {
+    "loc": null, 
+    "name": "Flag-14", 
+    "short_name": "F", 
+    "value": 300, 
+    "item_type": "FLAG", 
+    "type": "item", 
+    "id": 114, 
+    "desc": "???"
+  }, 
+  "P10": {
+    "loc": [
+      1, 
+      20
+    ], 
+    "locked": false, 
+    "name": "PPP", 
+    "money": 100, 
+    "items": [
+      110
+    ], 
+    "type": "player", 
+    "id": 10
+  }, 
+  "I58": {
+    "loc": [
+      21, 
+      8
+    ], 
+    "name": "jammer", 
+    "short_name": "J", 
+    "value": 30, 
+    "item_type": "JAMMER", 
+    "type": "item", 
+    "id": 58, 
+    "desc": "useful to protect from wifi attacks"
+  }, 
+  "P12": {
+    "loc": [
+      2, 
+      7
+    ], 
+    "locked": false, 
+    "name": "rpisec", 
+    "money": 100, 
+    "items": [
+      112
+    ], 
+    "type": "player", 
+    "id": 12
+  }, 
+  "P13": {
+    "loc": [
+      18, 
+      2
+    ], 
+    "locked": false, 
+    "name": "Samurai", 
+    "money": 100, 
+    "items": [
+      113
+    ], 
+    "type": "player", 
+    "id": 13
+  }, 
+  "P14": {
+    "loc": [
+      26, 
+      2
+    ], 
+    "locked": false, 
+    "name": "Shellphish", 
+    "money": 100, 
+    "items": [
+      114
+    ], 
+    "type": "player", 
+    "id": 14
+  }, 
+  "P15": {
+    "loc": [
+      2, 
+      3
+    ], 
+    "locked": false, 
+    "name": "Star-Bugs", 
+    "money": 100, 
+    "items": [
+      115
+    ], 
+    "type": "player", 
+    "id": 15
+  }, 
+  "P16": {
+    "loc": [
+      1, 
+      27
+    ], 
+    "locked": false, 
+    "name": "Tea Deliverers", 
+    "money": 100, 
+    "items": [
+      116
+    ], 
+    "type": "player", 
+    "id": 16
+  }, 
+  "I51": {
+    "loc": [
+      13, 
+      9
+    ], 
+    "name": "u2f key", 
+    "short_name": "U2F", 
+    "value": 20, 
+    "item_type": "U2F_KEY", 
+    "type": "item", 
+    "id": 51, 
+    "desc": "useful to protect from phishing attacks"
+  }, 
+  "I50": {
+    "loc": [
+      7, 
+      29
+    ], 
+    "name": "u2f key", 
+    "short_name": "U2F", 
+    "value": 20, 
+    "item_type": "U2F_KEY", 
+    "type": "item", 
+    "id": 50, 
+    "desc": "useful to protect from phishing attacks"
+  }, 
+  "I53": {
+    "loc": [
+      1, 
+      0
+    ], 
+    "name": "pistachio", 
+    "short_name": "P", 
+    "value": 5, 
+    "item_type": "PISTACHIO", 
+    "type": "item", 
+    "id": 53, 
+    "desc": "the bestest food"
+  }, 
+  "I52": {
+    "loc": [
+      0, 
+      25
+    ], 
+    "name": "nextgen av", 
+    "short_name": "AV", 
+    "value": 20, 
+    "item_type": "NEXTGEN_AV", 
+    "type": "item", 
+    "id": 52, 
+    "desc": "useful to protect from malware attacks"
+  }, 
+  "I55": {
+    "loc": [
+      8, 
+      26
+    ], 
+    "name": "iron case", 
+    "short_name": "IC", 
+    "value": 20, 
+    "item_type": "IRON_CASE", 
+    "type": "item", 
+    "id": 55, 
+    "desc": "useful to protect from usb attacks"
+  }, 
+  "P8": {
+    "loc": [
+      20, 
+      15
+    ], 
+    "locked": false, 
+    "name": "Norsecode", 
+    "money": 100, 
+    "items": [
+      108
+    ], 
+    "type": "player", 
+    "id": 8
+  }, 
+  "I57": {
+    "loc": [
+      20, 
+      1
+    ], 
+    "name": "water", 
+    "short_name": "W", 
+    "value": 0, 
+    "item_type": "WATER", 
+    "type": "item", 
+    "id": 57, 
+    "desc": "WARNING, dangerous to computers!"
+  }, 
+  "I56": {
+    "loc": [
+      20, 
+      17
+    ], 
+    "name": "ooosticker", 
+    "short_name": "OOO", 
+    "value": 5, 
+    "item_type": "OOOSTICKER", 
+    "type": "item", 
+    "id": 56, 
+    "desc": "the bestest sticker"
+  }, 
+  "P2": {
+    "loc": [
+      9, 
+      24
+    ], 
+    "locked": false, 
+    "name": "/bin/tw", 
+    "money": 100, 
+    "items": [
+      102
+    ], 
+    "type": "player", 
+    "id": 2
+  }, 
+  "P3": {
+    "loc": [
+      10, 
+      6
+    ], 
+    "locked": false, 
+    "name": "Cykor", 
+    "money": 100, 
+    "items": [
+      103
+    ], 
+    "type": "player", 
+    "id": 3
+  }, 
+  "I39": {
+    "loc": [
+      9, 
+      5
+    ], 
+    "name": "spyware", 
+    "short_name": "SPY", 
+    "value": 20, 
+    "item_type": "SPYWARE", 
+    "type": "item", 
+    "id": 39, 
+    "desc": "useful to mount spyware attacks"
+  }, 
+  "I38": {
+    "loc": [
+      17, 
+      6
+    ], 
+    "name": "usb key", 
+    "short_name": "UK", 
+    "value": 20, 
+    "item_type": "USB_KEY", 
+    "type": "item", 
+    "id": 38, 
+    "desc": "useful to mount usb attacks"
+  }, 
+  "P6": {
+    "loc": [
+      24, 
+      10
+    ], 
+    "locked": false, 
+    "name": "mhackeroni", 
+    "money": 100, 
+    "items": [
+      106
+    ], 
+    "type": "player", 
+    "id": 6
+  }, 
+  "P7": {
+    "loc": [
+      13, 
+      28
+    ], 
+    "locked": false, 
+    "name": "More Bush Smoked Whackers", 
+    "money": 100, 
+    "items": [
+      107
+    ], 
+    "type": "player", 
+    "id": 7
+  }, 
+  "P4": {
+    "loc": [
+      19, 
+      5
+    ], 
+    "locked": false, 
+    "name": "HITCONBFKinesiS", 
+    "money": 100, 
+    "items": [
+      104
+    ], 
+    "type": "player", 
+    "id": 4
+  }, 
+  "P5": {
+    "loc": [
+      12, 
+      5
+    ], 
+    "locked": false, 
+    "name": "koreanbadass", 
+    "money": 100, 
+    "items": [
+      105
+    ], 
+    "type": "player", 
+    "id": 5
+  }, 
+  "I33": {
+    "loc": [
+      3, 
+      15
+    ], 
+    "name": "u2f key", 
+    "short_name": "U2F", 
+    "value": 20, 
+    "item_type": "U2F_KEY", 
+    "type": "item", 
+    "id": 33, 
+    "desc": "useful to protect from phishing attacks"
+  }, 
+  "I32": {
+    "loc": [
+      18, 
+      16
+    ], 
+    "name": "apt malware", 
+    "short_name": "APT", 
+    "value": 20, 
+    "item_type": "APT_MALWARE", 
+    "type": "item", 
+    "id": 32, 
+    "desc": "useful to mount malware attacks"
+  }, 
+  "I31": {
+    "loc": [
+      11, 
+      13
+    ], 
+    "name": "jammer", 
+    "short_name": "J", 
+    "value": 30, 
+    "item_type": "JAMMER", 
+    "type": "item", 
+    "id": 31, 
+    "desc": "useful to protect from wifi attacks"
+  }, 
+  "P9": {
+    "loc": [
+      14, 
+      13
+    ], 
+    "locked": false, 
+    "name": "pasten", 
+    "money": 100, 
+    "items": [
+      109
+    ], 
+    "type": "player", 
+    "id": 9
+  }, 
+  "I37": {
+    "loc": [
+      13, 
+      26
+    ], 
+    "name": "water", 
+    "short_name": "W", 
+    "value": 0, 
+    "item_type": "WATER", 
+    "type": "item", 
+    "id": 37, 
+    "desc": "WARNING, dangerous to computers!"
+  }, 
+  "I36": {
+    "loc": [
+      13, 
+      14
+    ], 
+    "name": "jammer", 
+    "short_name": "J", 
+    "value": 30, 
+    "item_type": "JAMMER", 
+    "type": "item", 
+    "id": 36, 
+    "desc": "useful to protect from wifi attacks"
+  }, 
+  "I35": {
+    "loc": [
+      20, 
+      5
+    ], 
+    "name": "iron case", 
+    "short_name": "IC", 
+    "value": 20, 
+    "item_type": "IRON_CASE", 
+    "type": "item", 
+    "id": 35, 
+    "desc": "useful to protect from usb attacks"
+  }, 
+  "I34": {
+    "loc": [
+      8, 
+      18
+    ], 
+    "name": "usb key", 
+    "short_name": "UK", 
+    "value": 20, 
+    "item_type": "USB_KEY", 
+    "type": "item", 
+    "id": 34, 
+    "desc": "useful to mount usb attacks"
+  }, 
+  "I48": {
+    "loc": [
+      25, 
+      27
+    ], 
+    "name": "software update", 
+    "short_name": "SWU", 
+    "value": 20, 
+    "item_type": "SOFTWARE_UPDATE", 
+    "type": "item", 
+    "id": 48, 
+    "desc": "useful to protect from n days"
+  }, 
+  "I49": {
+    "loc": [
+      23, 
+      12
+    ], 
+    "name": "nextgen av", 
+    "short_name": "AV", 
+    "value": 20, 
+    "item_type": "NEXTGEN_AV", 
+    "type": "item", 
+    "id": 49, 
+    "desc": "useful to protect from malware attacks"
+  }, 
+  "I46": {
+    "loc": [
+      28, 
+      13
+    ], 
+    "name": "jammer", 
+    "short_name": "J", 
+    "value": 30, 
+    "item_type": "JAMMER", 
+    "type": "item", 
+    "id": 46, 
+    "desc": "useful to protect from wifi attacks"
+  }, 
+  "I47": {
+    "loc": [
+      15, 
+      6
+    ], 
+    "name": "nday", 
+    "short_name": "N", 
+    "value": 10, 
+    "item_type": "NDAY", 
+    "type": "item", 
+    "id": 47, 
+    "desc": "useful to use some of the attacks requiring bugs"
+  }, 
+  "I44": {
+    "loc": [
+      26, 
+      8
+    ], 
+    "name": "software update", 
+    "short_name": "SWU", 
+    "value": 20, 
+    "item_type": "SOFTWARE_UPDATE", 
+    "type": "item", 
+    "id": 44, 
+    "desc": "useful to protect from n days"
+  }, 
+  "I45": {
+    "loc": [
+      9, 
+      4
+    ], 
+    "name": "ooosticker", 
+    "short_name": "OOO", 
+    "value": 5, 
+    "item_type": "OOOSTICKER", 
+    "type": "item", 
+    "id": 45, 
+    "desc": "the bestest sticker"
+  }, 
+  "I42": {
+    "loc": [
+      6, 
+      6
+    ], 
+    "name": "zeroday", 
+    "short_name": "0", 
+    "value": 40, 
+    "item_type": "ZERODAY", 
+    "type": "item", 
+    "id": 42, 
+    "desc": "useful to attack even when player has software updates"
+  }, 
+  "I43": {
+    "loc": [
+      8, 
+      29
+    ], 
+    "name": "software update", 
+    "short_name": "SWU", 
+    "value": 20, 
+    "item_type": "SOFTWARE_UPDATE", 
+    "type": "item", 
+    "id": 43, 
+    "desc": "useful to protect from n days"
+  }, 
+  "I40": {
+    "loc": [
+      5, 
+      15
+    ], 
+    "name": "ooosticker", 
+    "short_name": "OOO", 
+    "value": 5, 
+    "item_type": "OOOSTICKER", 
+    "type": "item", 
+    "id": 40, 
+    "desc": "the bestest sticker"
+  }, 
+  "I41": {
+    "loc": [
+      15, 
+      5
+    ], 
+    "name": "ooosticker", 
+    "short_name": "OOO", 
+    "value": 5, 
+    "item_type": "OOOSTICKER", 
+    "type": "item", 
+    "id": 41, 
+    "desc": "the bestest sticker"
+  }, 
+  "I28": {
+    "loc": [
+      13, 
+      22
+    ], 
+    "name": "iron case", 
+    "short_name": "IC", 
+    "value": 20, 
+    "item_type": "IRON_CASE", 
+    "type": "item", 
+    "id": 28, 
+    "desc": "useful to protect from usb attacks"
+  }, 
+  "I29": {
+    "loc": [
+      0, 
+      6
+    ], 
+    "name": "iron case", 
+    "short_name": "IC", 
+    "value": 20, 
+    "item_type": "IRON_CASE", 
+    "type": "item", 
+    "id": 29, 
+    "desc": "useful to protect from usb attacks"
+  }, 
+  "I20": {
+    "loc": [
+      21, 
+      6
+    ], 
+    "name": "software update", 
+    "short_name": "SWU", 
+    "value": 20, 
+    "item_type": "SOFTWARE_UPDATE", 
+    "type": "item", 
+    "id": 20, 
+    "desc": "useful to protect from n days"
+  }, 
+  "I21": {
+    "loc": [
+      0, 
+      26
+    ], 
+    "name": "nextgen av", 
+    "short_name": "AV", 
+    "value": 20, 
+    "item_type": "NEXTGEN_AV", 
+    "type": "item", 
+    "id": 21, 
+    "desc": "useful to protect from malware attacks"
+  }, 
+  "I22": {
+    "loc": [
+      5, 
+      27
+    ], 
+    "name": "u2f key", 
+    "short_name": "U2F", 
+    "value": 20, 
+    "item_type": "U2F_KEY", 
+    "type": "item", 
+    "id": 22, 
+    "desc": "useful to protect from phishing attacks"
+  }, 
+  "I23": {
+    "loc": [
+      21, 
+      2
+    ], 
+    "name": "u2f key", 
+    "short_name": "U2F", 
+    "value": 20, 
+    "item_type": "U2F_KEY", 
+    "type": "item", 
+    "id": 23, 
+    "desc": "useful to protect from phishing attacks"
+  }, 
+  "I24": {
+    "loc": [
+      26, 
+      23
+    ], 
+    "name": "jammer", 
+    "short_name": "J", 
+    "value": 30, 
+    "item_type": "JAMMER", 
+    "type": "item", 
+    "id": 24, 
+    "desc": "useful to protect from wifi attacks"
+  }, 
+  "I25": {
+    "loc": [
+      29, 
+      15
+    ], 
+    "name": "iron case", 
+    "short_name": "IC", 
+    "value": 20, 
+    "item_type": "IRON_CASE", 
+    "type": "item", 
+    "id": 25, 
+    "desc": "useful to protect from usb attacks"
+  }, 
+  "I26": {
+    "loc": [
+      8, 
+      17
+    ], 
+    "name": "nextgen av", 
+    "short_name": "AV", 
+    "value": 20, 
+    "item_type": "NEXTGEN_AV", 
+    "type": "item", 
+    "id": 26, 
+    "desc": "useful to protect from malware attacks"
+  }, 
+  "I27": {
+    "loc": [
+      11, 
+      24
+    ], 
+    "name": "pistachio", 
+    "short_name": "P", 
+    "value": 5, 
+    "item_type": "PISTACHIO", 
+    "type": "item", 
+    "id": 27, 
+    "desc": "the bestest food"
+  }, 
+  "I19": {
+    "loc": [
+      10, 
+      23
+    ], 
+    "name": "nextgen av", 
+    "short_name": "AV", 
+    "value": 20, 
+    "item_type": "NEXTGEN_AV", 
+    "type": "item", 
+    "id": 19, 
+    "desc": "useful to protect from malware attacks"
+  }, 
+  "I18": {
+    "loc": [
+      22, 
+      4
+    ], 
+    "name": "water", 
+    "short_name": "W", 
+    "value": 0, 
+    "item_type": "WATER", 
+    "type": "item", 
+    "id": 18, 
+    "desc": "WARNING, dangerous to computers!"
+  }, 
+  "I15": {
+    "loc": [
+      3, 
+      21
+    ], 
+    "name": "spyware", 
+    "short_name": "SPY", 
+    "value": 20, 
+    "item_type": "SPYWARE", 
+    "type": "item", 
+    "id": 15, 
+    "desc": "useful to mount spyware attacks"
+  }, 
+  "I14": {
+    "loc": [
+      18, 
+      11
+    ], 
+    "name": "ooosticker", 
+    "short_name": "OOO", 
+    "value": 5, 
+    "item_type": "OOOSTICKER", 
+    "type": "item", 
+    "id": 14, 
+    "desc": "the bestest sticker"
+  }, 
+  "I17": {
+    "loc": [
+      11, 
+      1
+    ], 
+    "name": "jammer", 
+    "short_name": "J", 
+    "value": 30, 
+    "item_type": "JAMMER", 
+    "type": "item", 
+    "id": 17, 
+    "desc": "useful to protect from wifi attacks"
+  }, 
+  "I16": {
+    "loc": [
+      6, 
+      24
+    ], 
+    "name": "pistachio", 
+    "short_name": "P", 
+    "value": 5, 
+    "item_type": "PISTACHIO", 
+    "type": "item", 
+    "id": 16, 
+    "desc": "the bestest food"
+  }, 
+  "I11": {
+    "loc": [
+      20, 
+      26
+    ], 
+    "name": "nday", 
+    "short_name": "N", 
+    "value": 10, 
+    "item_type": "NDAY", 
+    "type": "item", 
+    "id": 11, 
+    "desc": "useful to use some of the attacks requiring bugs"
+  }, 
+  "I10": {
+    "loc": [
+      7, 
+      5
+    ], 
+    "name": "water", 
+    "short_name": "W", 
+    "value": 0, 
+    "item_type": "WATER", 
+    "type": "item", 
+    "id": 10, 
+    "desc": "WARNING, dangerous to computers!"
+  }, 
+  "I13": {
+    "loc": [
+      21, 
+      13
+    ], 
+    "name": "phishing kit", 
+    "short_name": "PK", 
+    "value": 20, 
+    "item_type": "PHISHING_KIT", 
+    "type": "item", 
+    "id": 13, 
+    "desc": "useful to mount phishing attacks"
+  }, 
+  "I12": {
+    "loc": [
+      25, 
+      9
+    ], 
+    "name": "spyware", 
+    "short_name": "SPY", 
+    "value": 20, 
+    "item_type": "SPYWARE", 
+    "type": "item", 
+    "id": 12, 
+    "desc": "useful to mount spyware attacks"
+  }, 
+  "I95": {
+    "loc": [
+      1, 
+      22
+    ], 
+    "name": "jammer", 
+    "short_name": "J", 
+    "value": 30, 
+    "item_type": "JAMMER", 
+    "type": "item", 
+    "id": 95, 
+    "desc": "useful to protect from wifi attacks"
+  }, 
+  "I94": {
+    "loc": [
+      13, 
+      19
+    ], 
+    "name": "iron case", 
+    "short_name": "IC", 
+    "value": 20, 
+    "item_type": "IRON_CASE", 
+    "type": "item", 
+    "id": 94, 
+    "desc": "useful to protect from usb attacks"
+  }, 
+  "I97": {
+    "loc": [
+      6, 
+      5
+    ], 
+    "name": "water", 
+    "short_name": "W", 
+    "value": 0, 
+    "item_type": "WATER", 
+    "type": "item", 
+    "id": 97, 
+    "desc": "WARNING, dangerous to computers!"
+  }, 
+  "I96": {
+    "loc": [
+      7, 
+      18
+    ], 
+    "name": "nextgen av", 
+    "short_name": "AV", 
+    "value": 20, 
+    "item_type": "NEXTGEN_AV", 
+    "type": "item", 
+    "id": 96, 
+    "desc": "useful to protect from malware attacks"
+  }, 
+  "I91": {
+    "loc": [
+      5, 
+      16
+    ], 
+    "name": "usb key", 
+    "short_name": "UK", 
+    "value": 20, 
+    "item_type": "USB_KEY", 
+    "type": "item", 
+    "id": 91, 
+    "desc": "useful to mount usb attacks"
+  }, 
+  "I90": {
+    "loc": [
+      8, 
+      13
+    ], 
+    "name": "nday", 
+    "short_name": "N", 
+    "value": 10, 
+    "item_type": "NDAY", 
+    "type": "item", 
+    "id": 90, 
+    "desc": "useful to use some of the attacks requiring bugs"
+  }, 
+  "I93": {
+    "loc": [
+      11, 
+      14
+    ], 
+    "name": "spyware", 
+    "short_name": "SPY", 
+    "value": 20, 
+    "item_type": "SPYWARE", 
+    "type": "item", 
+    "id": 93, 
+    "desc": "useful to mount spyware attacks"
+  }, 
+  "I92": {
+    "loc": [
+      16, 
+      2
+    ], 
+    "name": "zeroday", 
+    "short_name": "0", 
+    "value": 40, 
+    "item_type": "ZERODAY", 
+    "type": "item", 
+    "id": 92, 
+    "desc": "useful to attack even when player has software updates"
+  }, 
+  "I106": {
+    "loc": null, 
+    "name": "Flag-6", 
+    "short_name": "F", 
+    "value": 300, 
+    "item_type": "FLAG", 
+    "type": "item", 
+    "id": 106, 
+    "desc": "???"
+  }, 
+  "I107": {
+    "loc": null, 
+    "name": "Flag-7", 
+    "short_name": "F", 
+    "value": 300, 
+    "item_type": "FLAG", 
+    "type": "item", 
+    "id": 107, 
+    "desc": "???"
+  }, 
+  "I104": {
+    "loc": null, 
+    "name": "Flag-4", 
+    "short_name": "F", 
+    "value": 300, 
+    "item_type": "FLAG", 
+    "type": "item", 
+    "id": 104, 
+    "desc": "???"
+  }, 
+  "I105": {
+    "loc": null, 
+    "name": "Flag-5", 
+    "short_name": "F", 
+    "value": 300, 
+    "item_type": "FLAG", 
+    "type": "item", 
+    "id": 105, 
+    "desc": "???"
+  }, 
+  "I99": {
+    "loc": [
+      25, 
+      18
+    ], 
+    "name": "nday", 
+    "short_name": "N", 
+    "value": 10, 
+    "item_type": "NDAY", 
+    "type": "item", 
+    "id": 99, 
+    "desc": "useful to use some of the attacks requiring bugs"
+  }, 
+  "I98": {
+    "loc": [
+      2, 
+      11
+    ], 
+    "name": "ooosticker", 
+    "short_name": "OOO", 
+    "value": 5, 
+    "item_type": "OOOSTICKER", 
+    "type": "item", 
+    "id": 98, 
+    "desc": "the bestest sticker"
+  }, 
+  "I100": {
+    "loc": [
+      29, 
+      16
+    ], 
+    "name": "phishing kit", 
+    "short_name": "PK", 
+    "value": 20, 
+    "item_type": "PHISHING_KIT", 
+    "type": "item", 
+    "id": 100, 
+    "desc": "useful to mount phishing attacks"
+  }, 
+  "I101": {
+    "loc": null, 
+    "name": "Flag-1", 
+    "short_name": "F", 
+    "value": 300, 
+    "item_type": "FLAG", 
+    "type": "item", 
+    "id": 101, 
+    "desc": "???"
+  }, 
+  "I111": {
+    "loc": null, 
+    "name": "Flag-11", 
+    "short_name": "F", 
+    "value": 300, 
+    "item_type": "FLAG", 
+    "type": "item", 
+    "id": 111, 
+    "desc": "???"
+  }, 
+  "I88": {
+    "loc": [
+      9, 
+      8
+    ], 
+    "name": "software update", 
+    "short_name": "SWU", 
+    "value": 20, 
+    "item_type": "SOFTWARE_UPDATE", 
+    "type": "item", 
+    "id": 88, 
+    "desc": "useful to protect from n days"
+  }, 
+  "I89": {
+    "loc": [
+      10, 
+      0
+    ], 
+    "name": "wireless card", 
+    "short_name": "WC", 
+    "value": 50, 
+    "item_type": "WIRELESS_CARD", 
+    "type": "item", 
+    "id": 89, 
+    "desc": "useful to mount wifi attacks"
+  }, 
+  "I110": {
+    "loc": null, 
+    "name": "Flag-10", 
+    "short_name": "F", 
+    "value": 300, 
+    "item_type": "FLAG", 
+    "type": "item", 
+    "id": 110, 
+    "desc": "???"
+  }, 
+  "I82": {
+    "loc": [
+      0, 
+      22
+    ], 
+    "name": "jammer", 
+    "short_name": "J", 
+    "value": 30, 
+    "item_type": "JAMMER", 
+    "type": "item", 
+    "id": 82, 
+    "desc": "useful to protect from wifi attacks"
+  }, 
+  "I83": {
+    "loc": [
+      3, 
+      25
+    ], 
+    "name": "software update", 
+    "short_name": "SWU", 
+    "value": 20, 
+    "item_type": "SOFTWARE_UPDATE", 
+    "type": "item", 
+    "id": 83, 
+    "desc": "useful to protect from n days"
+  }, 
+  "I80": {
+    "loc": [
+      6, 
+      27
+    ], 
+    "name": "nday", 
+    "short_name": "N", 
+    "value": 10, 
+    "item_type": "NDAY", 
+    "type": "item", 
+    "id": 80, 
+    "desc": "useful to use some of the attacks requiring bugs"
+  }, 
+  "I81": {
+    "loc": [
+      10, 
+      2
+    ], 
+    "name": "phishing kit", 
+    "short_name": "PK", 
+    "value": 20, 
+    "item_type": "PHISHING_KIT", 
+    "type": "item", 
+    "id": 81, 
+    "desc": "useful to mount phishing attacks"
+  }, 
+  "I86": {
+    "loc": [
+      16, 
+      6
+    ], 
+    "name": "jammer", 
+    "short_name": "J", 
+    "value": 30, 
+    "item_type": "JAMMER", 
+    "type": "item", 
+    "id": 86, 
+    "desc": "useful to protect from wifi attacks"
+  }, 
+  "I87": {
+    "loc": [
+      10, 
+      27
+    ], 
+    "name": "ooosticker", 
+    "short_name": "OOO", 
+    "value": 5, 
+    "item_type": "OOOSTICKER", 
+    "type": "item", 
+    "id": 87, 
+    "desc": "the bestest sticker"
+  }, 
+  "I84": {
+    "loc": [
+      11, 
+      11
+    ], 
+    "name": "wireless card", 
+    "short_name": "WC", 
+    "value": 50, 
+    "item_type": "WIRELESS_CARD", 
+    "type": "item", 
+    "id": 84, 
+    "desc": "useful to mount wifi attacks"
+  }, 
+  "I85": {
+    "loc": [
+      18, 
+      13
+    ], 
+    "name": "apt malware", 
+    "short_name": "APT", 
+    "value": 20, 
+    "item_type": "APT_MALWARE", 
+    "type": "item", 
+    "id": 85, 
+    "desc": "useful to mount malware attacks"
+  }, 
+  "I9": {
+    "loc": [
+      2, 
+      23
+    ], 
+    "name": "zeroday", 
+    "short_name": "0", 
+    "value": 40, 
+    "item_type": "ZERODAY", 
+    "type": "item", 
+    "id": 9, 
+    "desc": "useful to attack even when player has software updates"
+  }, 
+  "I8": {
+    "loc": [
+      11, 
+      17
+    ], 
+    "name": "u2f key", 
+    "short_name": "U2F", 
+    "value": 20, 
+    "item_type": "U2F_KEY", 
+    "type": "item", 
+    "id": 8, 
+    "desc": "useful to protect from phishing attacks"
+  }, 
+  "I112": {
+    "loc": null, 
+    "name": "Flag-12", 
+    "short_name": "F", 
+    "value": 300, 
+    "item_type": "FLAG", 
+    "type": "item", 
+    "id": 112, 
+    "desc": "???"
+  }, 
+  "I1": {
+    "loc": [
+      27, 
+      4
+    ], 
+    "name": "ooosticker", 
+    "short_name": "OOO", 
+    "value": 5, 
+    "item_type": "OOOSTICKER", 
+    "type": "item", 
+    "id": 1, 
+    "desc": "the bestest sticker"
+  }, 
+  "I115": {
+    "loc": null, 
+    "name": "Flag-15", 
+    "short_name": "F", 
+    "value": 300, 
+    "item_type": "FLAG", 
+    "type": "item", 
+    "id": 115, 
+    "desc": "???"
+  }, 
+  "I3": {
+    "loc": [
+      4, 
+      28
+    ], 
+    "name": "apt malware", 
+    "short_name": "APT", 
+    "value": 20, 
+    "item_type": "APT_MALWARE", 
+    "type": "item", 
+    "id": 3, 
+    "desc": "useful to mount malware attacks"
+  }, 
+  "I2": {
+    "loc": [
+      2, 
+      14
+    ], 
+    "name": "ooosticker", 
+    "short_name": "OOO", 
+    "value": 5, 
+    "item_type": "OOOSTICKER", 
+    "type": "item", 
+    "id": 2, 
+    "desc": "the bestest sticker"
+  }, 
+  "I5": {
+    "loc": [
+      2, 
+      12
+    ], 
+    "name": "software update", 
+    "short_name": "SWU", 
+    "value": 20, 
+    "item_type": "SOFTWARE_UPDATE", 
+    "type": "item", 
+    "id": 5, 
+    "desc": "useful to protect from n days"
+  }, 
+  "I4": {
+    "loc": [
+      4, 
+      15
+    ], 
+    "name": "spyware", 
+    "short_name": "SPY", 
+    "value": 20, 
+    "item_type": "SPYWARE", 
+    "type": "item", 
+    "id": 4, 
+    "desc": "useful to mount spyware attacks"
+  }, 
+  "I7": {
+    "loc": [
+      10, 
+      25
+    ], 
+    "name": "jammer", 
+    "short_name": "J", 
+    "value": 30, 
+    "item_type": "JAMMER", 
+    "type": "item", 
+    "id": 7, 
+    "desc": "useful to protect from wifi attacks"
+  }, 
+  "I6": {
+    "loc": [
+      4, 
+      12
+    ], 
+    "name": "nday", 
+    "short_name": "N", 
+    "value": 10, 
+    "item_type": "NDAY", 
+    "type": "item", 
+    "id": 6, 
+    "desc": "useful to use some of the attacks requiring bugs"
+  }, 
+  "I116": {
+    "loc": null, 
+    "name": "Flag-16", 
+    "short_name": "F", 
+    "value": 300, 
+    "item_type": "FLAG", 
+    "type": "item", 
+    "id": 116, 
+    "desc": "???"
+  }, 
+  "I30": {
+    "loc": [
+      20, 
+      0
+    ], 
+    "name": "nextgen av", 
+    "short_name": "AV", 
+    "value": 20, 
+    "item_type": "NEXTGEN_AV", 
+    "type": "item", 
+    "id": 30, 
+    "desc": "useful to protect from malware attacks"
+  }
+}

@@ -45,7 +45,7 @@ type Item = {
     items: number[]
 }
 type State = Record<string, Item>
-const state: State = JSON.parse(readFileSync('../jsons/1596846885.json').toString())
+const state: State = JSON.parse(readFileSync('./1596846885.json').toString())
 
 const find = (loc: Location) => {
     return Object.values(state).find(i => i?.loc?.[0] === loc[0] && i?.loc?.[1] === loc[1])
