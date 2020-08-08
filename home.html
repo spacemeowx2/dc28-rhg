@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RHG</title>
+<style>
+body {
+    padding: 0;
+}
+
+
+#thewrapper {
+    display: grid;
+    grid-gap: 5px;
+}
+
+#thegrid {
+    border: 1px solid #ccc;
+    border-width: 1px 0 0 1px;
+    grid-column: 1;
+    grid-row: 1;
+    float:left;
+}
+
+#theinfo {
+    font-size: 18px;
+    grid-column: 2;
+    grid-row: 1;
+    float:left;
+    margin-left: 20px;
+}
+
+#therest {
+    font-size: 10px;
+    grid-column: 1/3;
+    grid-row: 2;
+    float:left;
+}
+
+.grid-cell {
+    border: 1px solid #ccc;
+    border-width: 0 1px 1px 0;
+    float: left;
+    font-size: 11px;
+    text-align: center;
+}
+
+.player-info {
+    margin-bottom: 5px;
+}
+
+.player-info .items-info {
+    margin-left: 10px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  /*border-bottom: 1px dotted black;*/
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: black;
+  color: #fff;
+  font-size: 12px;
+  text-align: left;
+  border-radius: 6px;
+  padding: 5px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip .tooltiptext .tooltiptexttitle {
+  font-size: 20px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
+	
+	<script>
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    if(typeof(String.prototype.trim) === "undefined")
+    {
+        String.prototype.trim = function() 
+        {
+            return String(this).replace(/^\s+|\s+$/g, '');
+        };
+    }
+
+		async function startStateUpdater(){
+      while (true) {
+        var ar = new XMLHttpRequest();
+        ar.onreadystatechange = function(){
+          if(ar.readyState == 4){
+            //the request is completed, now check its status
+            if(ar.status == 200) {
+              res = ar.responseText;
+              var state = JSON.parse(res);
+
+              var elems = state['elems'];
+              var timestamp = state['meta']['timestamp'];
+              var last_reset_timestamp = null;
+              if ('last_reset_timestamp' in state['meta']) {
+                last_reset_timestamp = state['meta']['last_reset_timestamp'];
+              }
+
+              document.getElementById("timestamp").innerHTML = "Last update at: " + timestamp + " UTC";
+              if (last_reset_timestamp != null) {
+                document.getElementById("timestamp").innerHTML += "<br>Current round started at: " + last_reset_timestamp + " UTC";
+              }
+
+              if (state['meta']['active'] === false) {
+                document.getElementById("info").innerHTML = 'Game is not active';
+                return;
+              }
+
+              document.getElementById("info").innerHTML = '';
+
+              // reset the grid
+              griddivs = document.getElementById("thegrid").children;
+              for (i = 0; i < griddivs.length; i++) {
+                griddivs[i].innerHTML = "";
+              }
+
+              // fill the grid
+              for (let [elem_id, elem] of Object.entries(elems)) {
+                if (elem['loc'] != null) {
+                  var grid_off = elem['loc'][0]*30 + elem['loc'][1];
+                  if (elem['type'] == 'player') {
+                    var e_id = 'P' + elem['id'];
+                    var ext_desc = '<span class="tooltiptexttitle"><b>PLAYER</b></span><br><b>Player ID</b>: ' + e_id + '<br><b>Player Name</b>: ' + elem['name'] + ' (' + e_id + ')<br><b>Money</b>: $' + elem['money'];
+                    griddivs[grid_off].innerHTML = e_id + '<span class="tooltiptext">' + ext_desc + '</span>';
+                } else if (elem['type'] == 'item') {
+                    var e_id = 'I' + elem['id'];
+                    var ext_desc = '<span class="tooltiptexttitle"><b>ITEM</b></span><br><b>Item ID</b>: ' + e_id + '<br><b>Item Name</b>: ' + elem['name'] + ' (' + elem['short_name'] + ')<br><b>Value</b>: $' + elem['value'] + '<br>' + '<b>Desc</b>: ' + elem['desc']
+                    griddivs[grid_off].innerHTML = elem['short_name'] + '<span class="tooltiptext">' + ext_desc + '</span>';
+                  }
+                } 
+              }
+
+              // fill player info
+              document.getElementById("theinfo").innerHTML = '';
+              for (let [elem_id, elem] of Object.entries(elems)) {
+                if (elem['type'] == 'player') {
+                  var player_id = elem_id;
+                  var player = elem;
+                  if (elem['locked']) {
+                    entry = '<div class="player-info"><del>Player #' + player_id + ': ' + player['name'] + ' ($' + player['money'] + ')</del></div>';
+                  } else {
+                    entry = '<div class="player-info">Player #' + player_id + ': ' + player['name'] + ' ($' + player['money'] + ')';
+                    entry += '<div class="items-info">Items: ';
+                    var itemsLen = player['items'].length;
+                    for (var i = 0; i < itemsLen; i++) {
+                      var item_id = player['items'][i];
+                      var item = state['elems']['I' + item_id];
+                      entry += item_id + "/" + item['name'] + ' ($' + item['value'] + '), ';
+                    }
+                    entry = entry.replace(/[,\s]+$/,'');
+                    entry += '</div></div>';
+                  }
+                  document.getElementById("theinfo").innerHTML += entry;
+                }
+              }
+
+            } else{
+              console.log("Status error: " + ar.status);
+            }
+          }
+        }
+        ar.open('GET', 'state.json');
+        ar.send();
+
+        await sleep(5000);
+      }
+    }
+
+    function createGrid(n) {
+      var thegrid = document.getElementById("thegrid");
+      var gridWidth = Math.min(900, Math.floor(window.innerWidth * 0.70 / n) * n);
+      var gridHeight = gridWidth;
+      thegrid.style.width = gridWidth + "px";
+      thegrid.style.height = gridHeight + "px";
+      var cellGridWidth = 0;
+      for (var i = 0; i < n*n; i++) {
+        var d = document.createElement("div");
+        d.className = "grid-cell tooltip";
+        d.style.width = (Math.floor(gridWidth/n)-1) + "px";
+        d.style.height = (Math.floor(gridWidth/n)-1) + "px";
+        d.style["line-height"] = d.style.height;
+        cellGridWidth = d.style.width;
+        thegrid.append(d);
+      }
+
+      var infoWidth = Math.min(400, window.innerWidth - gridWidth - 50);
+      var infoHeight = gridHeight;
+      var theinfo = document.getElementById("theinfo");
+      theinfo.style.width = infoWidth + "px";
+      theinfo.style.height = infoHeight + "px";
+    }
+
+    function init() {
+      createGrid(30);
+      startStateUpdater();
+    }
+
+	</script>	
+</head>
+
+
+<body onload="init()">
+
+  <h1>Welcome to RHG</h1>
+
+	<p id="timestamp"></p>
+	<p id="info"></p>
+
+  <div id="wrapper"> 
+    <div id="thegrid"> </div>
+    <div id="theinfo"> </div>
+    <div id="therest"> </div>
+  </div>
+
+
+</body>
+
+</html>

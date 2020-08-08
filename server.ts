@@ -1,6 +1,7 @@
 import { createServer } from 'net'
 import { createInterface } from 'readline'
 import { readFileSync } from 'fs'
+import express from 'express'
 
 enum Cmds {
     Move = 2614795397,
@@ -44,35 +45,33 @@ type Item = {
     items: number[]
 }
 type State = Record<string, Item>
-// const state: State = JSON.parse(readFileSync('../jsons/1596846885.json').toString())
+const state: State = JSON.parse(readFileSync('../jsons/1596846885.json').toString())
 
+const find = (loc: Location) => {
+    return Object.values(state).find(i => i?.loc?.[0] === loc[0] && i?.loc?.[1] === loc[1])
+}
+
+const locRelative = (loc: Location, d: number) => {
+    const dir = LocMap[d]
+    if (!dir) {
+        throw new Error('Wrong args')
+    }
+    const [dy, dx] = dir
+    const newPos: Location = [loc[0] + dy, loc[1] + dx]
+    return newPos
+}
+
+// team: P1
+const getPlayer = (team: string) => {
+    const n =  state[team]
+    if (n.type !== 'player') {
+        throw new Error('Assert error player')
+    }
+    return n
+}
 const R = 5
 
 const server = createServer((s) => {
-    const state: State = JSON.parse(readFileSync('../jsons/1596846885.json').toString())
-    const find = (loc: Location) => {
-        return Object.values(state).find(i => i?.loc?.[0] === loc[0] && i?.loc?.[1] === loc[1])
-    }
-    
-    const locRelative = (loc: Location, d: number) => {
-        const dir = LocMap[d]
-        if (!dir) {
-            throw new Error('Wrong args')
-        }
-        const [dy, dx] = dir
-        const newPos: Location = [loc[0] + dy, loc[1] + dx]
-        return newPos
-    }
-    
-    // team: P1
-    const getPlayer = (team: string) => {
-        const n =  state[team]
-        if (n.type !== 'player') {
-            throw new Error('Assert error player')
-        }
-        return n
-    }
-
     const rl = createInterface({
         input: s,
         // output: s,
@@ -187,3 +186,19 @@ const server = createServer((s) => {
 
 server.listen(6666, '0.0.0.0')
 console.log('listening on 127.0.0.1:6666')
+
+const app = express()
+const port = 8080
+
+app.get('/', (req, res) => res.sendFile(__dirname + '/home.html'))
+app.get('/state.json', (req, res) => {
+    res.json({
+        meta: {
+            timestamp: new Date()
+        },
+        elems: state
+    })
+})
+
+app.listen(port, '0.0.0.0', () => console.log(`Example app listening on port 127.0.0.1:${port}`))
+console.log(`web listening on 127.0.0.1:${port}`)
