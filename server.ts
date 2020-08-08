@@ -72,6 +72,14 @@ const getPlayer = (team: string) => {
     }
     return n
 }
+const getIndex = (item: Item) => {
+    if (item.type === 'item') {
+        return `I${item.id}`
+    } else if (item.type === 'player') {
+        return `P${item.id}`
+    }
+    throw new Error('Can not getIndex')
+}
 const R = 5
 
 const server = createServer((s) => {
@@ -102,12 +110,15 @@ const server = createServer((s) => {
                 if (!player.loc) {
                     throw new Error('Your dead')
                 }
-                let elems: Item[] = []
+                let elems: Record<string, Item> = {}
                 for (let i = player.loc[0] - R; i < player.loc[0] + R; i++) {
                     for (let j = player.loc[1] - R; j < player.loc[1] + R; j++) {
+                        if (i === player.loc[0] && j === player.loc[1]) {
+                            continue
+                        }
                         const v = find([i, j])
                         if (v) {
-                            elems.push(v)
+                            elems[getIndex(v)] = v
                         }
                     }
                 }
