@@ -40,6 +40,7 @@ type Item = {
     item_type: string
     loc: Location | null
 } | {
+    id: number
     type: 'player'
     loc: Location | null
     items: number[]
@@ -90,7 +91,9 @@ const server = createServer((s) => {
                     throw new Error('you cannot inspect an item you do not own')
                 }
 
-                return item
+                return {
+                    item
+                }
             }
             case Cmds.Elems: {
                 const player = getPlayer(team)
@@ -112,9 +115,13 @@ const server = createServer((s) => {
             }
             case Cmds.Player: {
                 const player = getPlayer(team)
+                const items: Record<string, Item> = {}
+                for (const i of player.items.map(id => state[`I${id}`])) {
+                    items[`I${i.id}`] = i
+                }
                 return {
                     player,
-                    items: player.items.map(id => state[`I${id}`])
+                    items,
                 }
             }
             case Cmds.Pick: {
