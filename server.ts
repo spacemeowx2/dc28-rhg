@@ -1,6 +1,6 @@
 const STATE = './1596846885.json'
 
-import { createServer } from 'net'
+import { createServer, Socket } from 'net'
 import { createInterface } from 'readline'
 import { readFileSync } from 'fs'
 import express from 'express'
@@ -82,7 +82,9 @@ const getIndex = (item: Item) => {
 }
 const R = 5
 
+let sockets: Socket[] = []
 const server = createServer((s) => {
+    sockets.push(s)
     const rl = createInterface({
         input: s,
         // output: s,
@@ -157,8 +159,22 @@ const server = createServer((s) => {
                     item: existing
                 }
             }
-            case Cmds.Attack:
+            case Cmds.Attack: {
+                console.log('atk', team, nps)
+                const player = getPlayer(team)
+                if (!player.loc) {
+                    throw new Error('Your dead')
+                }
+                const newPos: Location = locRelative(player.loc, nps[2])
+                console.log('newPos', newPos)
+                const existing = find(newPos)
+                if (existing?.type !== 'player') {
+                    throw new Error(`You can only attack player`)
+                }
+
+                existing.loc = null
                 return
+            }
             case Cmds.Move: {
                 const player = state[team]
                 if (!player.loc) {
@@ -214,6 +230,10 @@ const port = 8080
 
 app.get('/', (req, res) => res.sendFile(__dirname + '/home.html'))
 app.get('/reset', (req, res) => {
+    for (const s of sockets) {
+        s.end()
+    }
+    sockets = []
     state = JSON.parse(readFileSync(STATE).toString())
     res.send('Ok')
 })
