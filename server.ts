@@ -41,6 +41,7 @@ type Item = {
     type: 'item'
     item_type: string
     loc: Location | null
+    desc: string
 } | {
     id: number
     type: 'player'
@@ -49,9 +50,46 @@ type Item = {
 }
 type State = Record<string, Item>
 let state: State = JSON.parse(readFileSync(STATE).toString())
+const W = 30
+const H = 30
 
 const find = (loc: Location) => {
     return Object.values(state).find(i => i?.loc?.[0] === loc[0] && i?.loc?.[1] === loc[1])
+}
+const iterRange = (loc: Location, r: number, cb: (loc: Location) => void) => {
+    for (let i = loc[0] - r; i < loc[0] + r; i++) {
+        for (let j = loc[1] - r; j < loc[1] + r; j++) {
+            if (i < 0 || j < 0) continue
+            if (i >= H || j >= W) continue
+            cb([i, j])
+        }
+    }
+}
+const drop = (loc: Location, items: number[]) => {
+    // const v = find(loc)
+    // if (v) {
+    //     console.log('failed to drop')
+    //     return
+    // }
+    // const item = state[`I${items.pop()!}`]
+    // if (item?.type === 'player') {
+    //     throw new Error('impossible')
+    // }
+    // item.loc = loc
+    for (let r = 0; r < 5; r++) {
+        iterRange(loc, r, ([y, x]) => {
+            if (items.length === 0) return
+            const v = find([y, x])
+            if (v) {
+                return
+            }
+            const item = state[`I${items.pop()!}`]
+            if (item?.type === 'player') {
+                throw new Error('impossible')
+            }
+            item.loc = [y, x]
+        })
+    }
 }
 
 const locRelative = (loc: Location, d: number) => {
@@ -91,16 +129,24 @@ const server = createServer((s) => {
     })
     const handler = (cmd: string, token: string, ps: string[]) => {
         const ncmd = parseInt(cmd)
-        const team = `P${parseInt(token[0])}`
+        const teamId = parseInt(token[0])
+        if (!(1 <= teamId && teamId <= 9)) {
+            throw new Error('token is wrong: ' + token)
+        }
+        const team = `P${teamId}`
         const nps = ps.map(i => parseInt(i, 10))
         console.log('cmd', Cmds[ncmd], team)
         switch(ncmd) {
             case Cmds.Inspect: {
                 const itemId = nps[0]
                 const player = getPlayer(team)
-                const item = player.items.some(i => i === itemId)
-                if (!item) {
+                if (!player.items.some(i => i === itemId)) {
                     throw new Error('you cannot inspect an item you do not own')
+                }
+                const item = state[`I${itemId}`]
+
+                if (item.type === 'item' && item.item_type === 'FLAG') {
+                    return '{REAL_FLAG}'
                 }
 
                 return {
@@ -113,17 +159,26 @@ const server = createServer((s) => {
                     throw new Error('Your dead')
                 }
                 let elems: Record<string, Item> = {}
-                for (let i = player.loc[0] - R; i < player.loc[0] + R; i++) {
-                    for (let j = player.loc[1] - R; j < player.loc[1] + R; j++) {
-                        if (i === player.loc[0] && j === player.loc[1]) {
-                            continue
-                        }
-                        const v = find([i, j])
-                        if (v) {
-                            elems[getIndex(v)] = v
-                        }
+                iterRange(player.loc, R, ([y, x]) => {
+                    if (y === player.loc![0] && x === player.loc![1]) {
+                        return
                     }
-                }
+                    const v = find([y, x])
+                    if (v) {
+                        elems[getIndex(v)] = v
+                    }
+                })
+                // for (let i = player.loc[0] - R; i < player.loc[0] + R; i++) {
+                //     for (let j = player.loc[1] - R; j < player.loc[1] + R; j++) {
+                //         if (i === player.loc[0] && j === player.loc[1]) {
+                //             continue
+                //         }
+                //         const v = find([i, j])
+                //         if (v) {
+                //             elems[getIndex(v)] = v
+                //         }
+                //     }
+                // }
                 return {
                     elems,
                 }
@@ -168,12 +223,18 @@ const server = createServer((s) => {
                 const newPos: Location = locRelative(player.loc, nps[2])
                 console.log('newPos', newPos)
                 const existing = find(newPos)
-                if (existing?.type !== 'player') {
-                    throw new Error(`You can only attack player`)
+                if (existing?.type !== 'player' || !existing.loc) {
+                    throw new Error(`You can only attack live player`)
                 }
 
+                const l = existing.loc
                 existing.loc = null
-                return
+                drop(l, existing.items)
+                existing.items = []
+
+                return {
+                    player: existing,
+                }
             }
             case Cmds.Move: {
                 const player = state[team]
@@ -199,13 +260,13 @@ const server = createServer((s) => {
                 throw new Error('Wrong cmd')
         }
     }
-    let last = Date.now()
+    let last = 0
     const getT = () => Math.random() * 500 + 250
     rl.on('line', (input) => {
         try {
             const now = Date.now()
             if (now - last < getT()) {
-                throw new Error('hit rate limit, slow down')
+                // throw new Error('hit rate limit, slow down')
             }
             last = Date.now()
             const [cmd, token, ...ps] = input.split(' ')
